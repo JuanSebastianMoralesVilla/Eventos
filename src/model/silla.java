@@ -1,4 +1,3 @@
-
 package model;
 
 /**
@@ -6,18 +5,15 @@ package model;
  * @author user
  */
 public class silla {
-   
-    
+
     private String estado;
     private int numeroSilla;
     private char fila;
     private String descripcion;
-    public static String OPERATIVA= "operativa";
-    public static String DISPONIBLE="disponible";
-    public static String OCUPADA="ocupada";
-       public static String DEFECTUOSA= "defectuosa";
-       
-       
+    public static String OPERATIVA = "operativa";
+    public static String DISPONIBLE = "disponible";
+    public static String OCUPADA = "ocupada";
+    public static String DEFECTUOSA = "defectuosa";
 
     public silla(String estado, int numeroSilla, char fila, String descripcion) {
         this.estado = estado;
@@ -25,6 +21,7 @@ public class silla {
         this.fila = fila;
         this.descripcion = descripcion;
     }
+    
 
     public String getEstado() {
         return estado;
@@ -76,14 +73,7 @@ public class silla {
 
     @Override
     public String toString() {
-        return "silla{" + fila +"-"+ numeroSilla + ", "+ estado + '}';
+        return "silla{" + fila + "-" + numeroSilla + ", " + estado + '}';
     }
 
-    
-       
-       
-       
-    
-    
-    
 }

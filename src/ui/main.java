@@ -20,14 +20,17 @@ public class main {
         while (!exit) {
 
             int option = 0;
-            System.out.println("MANEJO AUDITORIOS ICESI "
+
+            System.out.println("---------------- MANEJO DE AUDITORIOS ICESI --------------------");
+            System.out.println("\n"
                     + "\n 1. CREAR AUDITORIO y SILLAS"
                     + "\n 2. CREAR EVENTO"
                     + "\n 3. REPORTAR SILLA DEFECTUOSA"
                     + "\n 4. PORCENTAJE DEFECTUOSA "
                     + "\n 5. IMPRIMIR ESTADO AUDITORIO"
                     + "\n 6. INICIAR EVENTO"
-                    + "\n 7. CERRAR EVENTO");
+                    + "\n 7. CERRAR EVENTO"
+                    + "\n");
             option = read.nextInt();
 
             switch (option) {
@@ -42,21 +45,23 @@ public class main {
                     nombre = read.next();
                     System.out.println("Ingrese la ubicacion  : ");
                     ubicacion = read.next();
-                    System.out.println("Ingrese el numero de filas ");
+                    System.out.println("Ingrese el numero de filas : ");
                     sillas = read.nextInt();
                     int[] cantSillas = new int[sillas];
                     for (int i = 0; i < cantSillas.length; i++) {
-                        System.out.println("ingrese Cuantas sillas hay en la fila " + (i + 1));
+                        System.out.println("Ingrese Cuantas sillas hay en la fila : " + (i + 1) + "\n");
                         cantSillas[i] = read.nextInt();
                     }
 
                     university.createAuditorium(nombre, ubicacion, estado, cantSillas);
 
+                    System.out.println("\n" + "Auditorio : " + nombre + "  creado con exito ");
                     break;
 
                 case 2:
 
-                    System.out.println("Indique el numero de auditorio en que quiera realizar el evento: ");
+                    System.out.println("Indique el numero de auditorio en que quiera realizar el evento: "
+                            + "\n");
                     int auditorioEvento;
 
                     for (int i = 0; i < university.getAuditoriums().length; i++) {
@@ -72,19 +77,19 @@ public class main {
                     System.out.println("Ingrese nombre evento: ");
 
                     String nombreEvento = read.next();
-                    System.out.println("Ingrese dia : ");
+                    System.out.println("Ingrese dia (1 a 31 dependiendo del mes): ");
                     int dia = read.nextInt();
-                    System.out.println("Ingrese mes: ");
+                    System.out.println("Ingrese mes: (1 a 12 )");
                     int mes = read.nextInt();
                     System.out.println("Ingrese año: ");
                     int anio = read.nextInt();
-                    System.out.println("Ingrese hora inicio del evento en formato 24 horas: ");
+                    System.out.println("Ingrese hora inicio del evento en formato 24 horas:  ");
                     int horainicio = read.nextInt();
-                    System.out.println("Ingrese hora final del evento en formato 24 horas");
+                    System.out.println("Ingrese hora final del evento en formato 24 horas: ");
                     int horafinal = read.nextInt();
-                    System.out.println("Ingrese Profesor encargado ");
+                    System.out.println("Ingrese Profesor encargado: ");
                     String ProfesorEncargado = read.next();
-                    System.out.println("Ingrese Facultad encargado ");
+                    System.out.println("Ingrese Facultad encargado: ");
                     String facultad = read.next();
                     System.out.println("Ingrese cantidad de personas : ");
                     int cantidadDePersonas = read.nextInt();
@@ -98,7 +103,8 @@ public class main {
                     char fila;
                     int numSilla;
                     String descripcion;
-                    System.out.println("Indique el numero de auditorio que quiera reportarle sillas defectuosas: ");
+                    System.out.println("Indique el numero de auditorio que quiera reportarle sillas defectuosas: "
+                            + "\n");
                     int auditorio;
 
                     for (int i = 0; i < university.getAuditoriums().length; i++) {
@@ -123,7 +129,7 @@ public class main {
                     break;
 
                 case 4:
-                    System.out.println("Indique el numero de auditorio que quiera reportarle sillas defectuosas: ");
+                    System.out.println("Indique el numero de auditorio de donde desea conocer el procentaje de sillas defectuosas: " + "\n");
 
                     for (int i = 0; i < university.getAuditoriums().length; i++) {
 
@@ -140,7 +146,7 @@ public class main {
 
                 case 5:
 
-                    System.out.println("Indique el numero de auditorio que quiera reportarle sillas defectuosas: ");
+                    System.out.println("Indique el numero del cual quiere imprimir su estado: " + "\n");
 
                     for (int i = 0; i < university.getAuditoriums().length; i++) {
 
@@ -177,15 +183,15 @@ public class main {
                     }
 
                     inicioEvento = read.nextInt();
-                    Event event = university.event(inicioEvento, a4);
+                    Event event1 = university.event(inicioEvento, a4);
 
-                    System.out.println(a4.initEvent(event));
+                    System.out.println(a4.initEvent(event1));
 
                     break;
 
                 case 7:
 
-                    System.out.println("Indique el numero de auditorio en que quiera iniciar el evento: ");
+                    System.out.println("Indique el numero de auditorio en que quiera cerrar el evento : ");
                     int cerrarEvento;
 
                     for (int i = 0; i < university.getAuditoriums().length; i++) {
@@ -198,7 +204,7 @@ public class main {
                     cerrarEvento = read.nextInt();
                     auditorium a5 = university.audit(cerrarEvento);
 
-                    System.out.println("Indique el numero de evento que quiera iniciar : ");
+                    System.out.println("Indique el numero de evento que quiera cerrar : ");
                     int finEvento;
 
                     for (int i = 0; i < a5.getEvents().size(); i++) {

@@ -1,11 +1,7 @@
-
 package model;
 
-
 public class Event {
-  
-    
-    
+
     private String nombre;
     private int dia;
     private int mes;
@@ -15,10 +11,8 @@ public class Event {
     private String ProfesorEncargado;
     private String facultad;
     private int cantidadDePersonas;
-    
-    
-   private auditorium [] auditoriums = new auditorium[ 10 ];
-    
+
+    private auditorium[] auditoriums = new auditorium[10];
 
     public Event(String nombre, int dia, int mes, int anio, int horainicio, int horafinal, String ProfesorEncargado, String facultad, int cantidadDePersonas) {
         this.nombre = nombre;
@@ -40,7 +34,6 @@ public class Event {
         this.auditoriums = auditoriums;
     }
 
-    
     public String getNombre() {
         return nombre;
     }
@@ -112,26 +105,31 @@ public class Event {
     public void setCantidadDePersonas(int cantidadDePersonas) {
         this.cantidadDePersonas = cantidadDePersonas;
     }
-    
-    public void addAuditorium(auditorium a){
-    
+
+    /**
+     * @name: addAuditorium
+     * @descripition: this this method adds an event to an auditorium indicated
+     * by the user<br>
+     * <b>pre: </b> the auditorium arrangement must already have an auditorium
+     * created <br>
+     *
+     * @param a .
+     *
+     * <b>post: </b> auditorium add in event<br>
+     */
+    public void addAuditorium(auditorium a) {
+
         for (int i = 0; i < auditoriums.length; i++) {
-            if(auditoriums[i]==null){
-                auditoriums[i]=a;
-                i=auditoriums.length;
+            if (auditoriums[i] == null) {
+                auditoriums[i] = a;
+                i = auditoriums.length;
             }
         }
     }
-    
+
     @Override
     public String toString() {
-        return  "nombre=" + nombre + ", dia=" + dia + ", mes=" + mes + ", anio=" + anio + ", horainicio=" + horainicio + ", horafinal=" + horafinal + ", ProfesorEncargado=" + ProfesorEncargado + ", facultad=" + facultad + ", cantidadDePersonas=" + cantidadDePersonas;
+        return "nombre=" + nombre + ", dia=" + dia + ", mes=" + mes + ", anio=" + anio + ", horainicio=" + horainicio + ", horafinal=" + horafinal + ", ProfesorEncargado=" + ProfesorEncargado + ", facultad=" + facultad + ", cantidadDePersonas=" + cantidadDePersonas;
     }
-    
-    
-    
-    
-    
-    
-    
+
 }
